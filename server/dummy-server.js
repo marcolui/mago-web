@@ -3,8 +3,8 @@ const app = express();
 const port = 3009;
 
 var items = [
-    {id: 1, name: 'John'},
-    {id: 2, name: 'Elmo'}
+    {id: 1, name: 'Item 1'},
+    {id: 2, name: 'Item 2'}
 ];
 
 app.get('/api/items', function (req, res) {

@@ -1,9 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import AppMain from './containers/app-main';
+import {Provider} from 'react-redux';
+import configureStore from './configure-store';
 
 function createRoot() {
+    const store = configureStore();
     return (
-        <div>hello</div>
+        <Provider store={store}>
+        <AppMain/>
+        </Provider>
     )
 }
 

@@ -30,6 +30,10 @@ const config = {
                 test: /\.js$/,
                 loaders: ['babel-loader'],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.less$/,
+                loaders: ['style-loader', 'css-loader', 'less-loader']
             }
         ]
     },
