@@ -3,7 +3,15 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-    devServer: { inline: true },
+    devServer: { inline: true, port: 3004,
+        proxy: {
+            '/api': {
+                target: 'http://localhost:3009',
+                secure: false
+            }
+        },
+    },
+
     // context: path.join(__dirname, 'src'),
     entry: {
         app: [

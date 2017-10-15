@@ -1,0 +1,15 @@
+{
+  "name": "dummy-server",
+  "version": "1.0.0",
+  "description": "dummy-server for mago-web",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dummy-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Marco Lui",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
