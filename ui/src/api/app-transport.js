@@ -8,4 +8,7 @@ export default class AppTransport {
     getItems() {
         return this.transport.get('/api/items');
     }
+    getItemById(itemId) {
+        return this.transport.get(`/api/items/${itemId}`);
+    }
 }

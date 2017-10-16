@@ -3,27 +3,34 @@ import React from 'react'
 
 import AppBar from "../components/app-bar";
 import SideMenu from "../components/side-menu";
-import {loadItems} from '../actions/items-actions';
+import {loadItems, loadItemById} from '../actions/items-actions';
 
 class AppMain extends React.Component {
     componentDidMount() {
-        this.props.loadItems();
+        // this.props.loadItems();
     }
     render() {
-        const {menuItems} = this.props;
+        const {items, title, selectedItem, onItemsClicked, onItemClicked} = this.props;
+        const selectedItemDiv = selectedItem && <div className="content">
+                You selected {selectedItem.id} {selectedItem.name}
+            </div>;
         return (
             <div className="app-layout">
-                <AppBar appTitle="Mago Web"/>
-                <SideMenu items={menuItems}/>
+                <AppBar appTitle={title}/>
+                <SideMenu items={items} onItemsClicked={onItemsClicked} onItemClicked={onItemClicked}/>
+                {selectedItemDiv}
             </div>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
-    menuItems: state.items.items
+    items: state.items.items,
+    selectedItem: state.items.selected,
+    title: 'Mago Web'
 });
 const mapDispatchToProps = (dispatch) => ({
-    loadItems: () => dispatch(loadItems.action())
+    onItemsClicked: () => dispatch(loadItems.action()),
+    onItemClicked: (itemId) => dispatch(loadItemById.action(itemId))
 });
 export default connect(mapStateToProps, mapDispatchToProps)(AppMain);

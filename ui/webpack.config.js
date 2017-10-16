@@ -32,8 +32,12 @@ const config = {
                 exclude: /node_modules/
             },
             {
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 loaders: ['style-loader', 'css-loader', 'less-loader']
+            },
+            {
+                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                loader: 'file-loader?name=assets/fonts/[name].[ext]'
             }
         ]
     },

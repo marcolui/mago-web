@@ -37,15 +37,38 @@
   box-shadow: 5px 0 2px -2px #aaaaaa;
   color: white;
   padding: 0 10px;
+}
+
+.menu-item {
+  border-radius: 3px;
+  margin-top: 10px;
+  cursor: pointer;
+  padding: 4px 10px;
+  transition: background-color 0.2s ease-out;
+  &:hover {
+    background-color: #cccccc;
+    color: white;
+  }
+  > i {
+    margin-right: 10px;
+  }
+}
+
+.sub-menu {
+  padding: 3px 20px;
   >div {
+    padding: 4px 10px;
     border-radius: 3px;
-    margin-top: 10px;
     cursor: pointer;
-    padding: 2px;
     transition: background-color 0.2s ease-out;
     &:hover {
       background-color: #cccccc;
       color: white;
     }
   }
+}
+
+.content {
+  grid-area: content;
+  padding: 20px;
 }
