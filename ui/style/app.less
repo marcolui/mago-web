@@ -1,5 +1,6 @@
 @import 'core/colors.less';
 @import 'core/params.less';
+@import 'items.less';
 
 * {
   font-family: "Helvetica Neue", Helvetica, Arial, SansSerif, serif;
@@ -12,9 +13,9 @@
   right: 0;
   display: grid;
   grid-template-areas:
-    "appbar appbar"
-    "sidemenu content";
-  grid-template-columns: 200px 1fr;
+    "appbar"
+    "sidemenu";
+  grid-template-columns: auto;
   grid-template-rows: 60px 1fr;
 }
 
@@ -29,46 +30,4 @@
   color: @app-bar-title-color;
   padding-left: 24px;
   box-shadow: 0 1px 2px 2px #aaaaaa;
-}
-
-.side-menu {
-  background-color: @black;
-  grid-area: sidemenu;
-  box-shadow: 5px 0 2px -2px #aaaaaa;
-  color: white;
-  padding: 0 10px;
-}
-
-.menu-item {
-  border-radius: 3px;
-  margin-top: 10px;
-  cursor: pointer;
-  padding: 4px 10px;
-  transition: background-color 0.2s ease-out;
-  &:hover {
-    background-color: #cccccc;
-    color: white;
-  }
-  > i {
-    margin-right: 10px;
-  }
-}
-
-.sub-menu {
-  padding: 3px 20px;
-  >div {
-    padding: 4px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    transition: background-color 0.2s ease-out;
-    &:hover {
-      background-color: #cccccc;
-      color: white;
-    }
-  }
-}
-
-.content {
-  grid-area: content;
-  padding: 20px;
 }
