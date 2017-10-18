@@ -24,10 +24,33 @@
   grid-area: appbar;
   display: flex;
   align-items: center;
-
-  letter-spacing: 2px;
-  font-size: @app-bar-title-font-size;
-  color: @app-bar-title-color;
-  padding-left: 24px;
   box-shadow: 0 1px 2px 2px #aaaaaa;
+
+  .title {
+    letter-spacing: 2px;
+    font-size: @app-bar-title-font-size;
+    color: @app-bar-title-color;
+    padding-left: 24px;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: row;
+    color: rgba(255, 255, 255, 0.87);
+    margin-left: 20px;
+    >div {
+      padding: 2px 10px;
+      border-radius: 3px;
+      cursor: pointer;
+      &:not(:first-child) {
+        margin-left: 10px;
+      }
+      transition: background-color 0.2s ease-out;
+      &:hover {
+        background-color: #cccccc;
+        color: white;
+      }
+    }
+  }
+
 }
