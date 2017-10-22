@@ -2,9 +2,9 @@ import React from 'react';
 
 class AppBar extends React.Component {
     render() {
-        const {appTitle, menuItems} = this.props;
-        const menuDiv = menuItems && (<div className="menu">
-                {menuItems.map(menuItem => (<div>{menuItem.text}</div>))}
+        const {appTitle, links} = this.props;
+        const menuDiv = links && (<div className="menu">
+                {links.map(link => (<div>{link}</div>))}
             </div> );
         return (
             <div className="app-bar">

@@ -4,6 +4,9 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
     devServer: { inline: true, port: 3004,
+        historyApiFallback:{
+            index:'dist/index.html'
+        },
         proxy: {
             '/api': {
                 target: 'http://localhost:3009',

@@ -1,27 +1,27 @@
 import {connect} from 'react-redux';
 import React from 'react'
+import {BrowserRouter as Router} from 'react-router-dom';
+import {createRoutes, createLinks} from '../routes';
 
 import AppBar from "../components/app-bar";
-import ItemsMain from './items-main';
-import PeopleMain from './people-main';
 
 class AppMain extends React.Component {
     render() {
-        const {title, menuItems} = this.props;
+        const {title, links} = this.props;
+        const routes = createRoutes();
         return (
-            <div className="app-layout">
-                <AppBar appTitle={title} menuItems={menuItems}/>
-                <ItemsMain/>
-            </div>
+            <Router>
+                <div className="app-layout">
+                    <AppBar appTitle={title} links={links}/>
+                    {routes}
+                </div>
+            </Router>
         );
     }
 }
 
 const mapStateToProps = (state) => ({
     title: 'Mago Web',
-    menuItems: [
-        {text: 'Items'},
-        {text: 'People'}
-    ]
+    links: createLinks()
 });
 export default connect(mapStateToProps)(AppMain);
